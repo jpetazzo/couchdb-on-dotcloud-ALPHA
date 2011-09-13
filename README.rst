@@ -37,3 +37,12 @@ and copy the ``builder`` script to your repository as well. Push as
 usual. Rejoice (but remember not to put any important stuff into
 your CouchDB yet).
 
+
+Authentication
+--------------
+
+By default, there is **NO** authentication. Anyone knowing its URL
+can acccess your CouchDB. You can setup authentication yourself if
+you need to. And of course, when CouchDB will be officially supported,
+authentication will be pre-configured by default, like for other
+DotCloud-supported database stacks.
