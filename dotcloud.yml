@@ -1,0 +1,6 @@
+couchdb:
+    type: custom
+    buildscript: builder
+    ports:
+        www: http
+    process: ~/build-couchdb/build/bin/couchdb
