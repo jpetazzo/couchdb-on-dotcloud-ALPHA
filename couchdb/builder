@@ -1,0 +1,25 @@
+#!/bin/sh
+
+slowbuild () {
+    git clone git://github.com/iriscouch/build-couchdb.git
+    cd build-couchdb
+    git submodule init
+    git submodule update
+    rake
+    # Then, you need to modify ~/build-couchdb/build/etc/couchdb/local.ini
+}
+
+fastbuild () {
+    if [ -d ~/build-couchdb ]
+    then
+        echo "CouchDB already installed."
+    else
+        echo "Installing CouchDB..."
+        curl http://dotcloud-plugins.s3.amazonaws.com/couchdb.tar.gz |
+            tar -C ~ -zxf-
+    fi
+    echo "Copying dotCloud scaffolding..."
+    cp -a couchdb/. ~
+}
+
+fastbuild

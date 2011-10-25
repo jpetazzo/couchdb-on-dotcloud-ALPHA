@@ -1,0 +1,3 @@
+#!/bin/sh
+sed -i "s/^port = 8080/port = $PORT_WWW/" ~/build-couchdb/build/etc/couchdb/local.ini
+~/build-couchdb/build/bin/couchdb
